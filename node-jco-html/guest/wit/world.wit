@@ -1,0 +1,22 @@
+package local:html-fetcher;
+
+// fetcher world は wasi-http の outgoing-handler を import して、
+// 与えられた URL を HTTP GET → HTML をパース → タイトルとリンクを返す。
+//
+// 関連 WASI インターフェース (types / streams / poll / clocks) は
+// outgoing-handler が依存するので一緒に import する。
+world fetcher {
+    import wasi:clocks/monotonic-clock@0.2.0;
+    import wasi:io/error@0.2.0;
+    import wasi:io/poll@0.2.0;
+    import wasi:io/streams@0.2.0;
+    import wasi:http/types@0.2.0;
+    import wasi:http/outgoing-handler@0.2.0;
+
+    record page-info {
+        title: string,
+        links: list<string>,
+    }
+
+    export extract: func(url: string) -> result<page-info, string>;
+}

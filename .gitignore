@@ -1,0 +1,9 @@
+# Claude Code 内部ファイル
+.claude/
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

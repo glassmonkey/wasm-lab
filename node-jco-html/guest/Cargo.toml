@@ -1,0 +1,26 @@
+[package]
+name = "html-fetcher"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wit-bindgen-rt = { version = "0.39", features = ["bitflags"] }
+url = "2"
+scraper = { version = "0.20", default-features = false }
+
+[package.metadata.component]
+package = "local:html-fetcher"
+
+[package.metadata.component.target]
+path = "wit"
+world = "fetcher"
+
+[package.metadata.component.target.dependencies]
+"wasi:clocks" = { path = "wit/deps/wasi-clocks-0.2.0" }
+"wasi:io" = { path = "wit/deps/wasi-io-0.2.0" }
+"wasi:http" = { path = "wit/deps/wasi-http-0.2.0" }
+"wasi:random" = { path = "wit/deps/wasi-random-0.2.0" }
+"wasi:cli" = { path = "wit/deps/wasi-cli-0.2.0" }

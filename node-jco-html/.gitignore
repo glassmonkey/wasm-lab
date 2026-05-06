@@ -1,0 +1,5 @@
+guest/target
+guest/src/bindings.rs
+host/dist
+host/node_modules
+host/package-lock.json
