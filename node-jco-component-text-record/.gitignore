@@ -1,0 +1,7 @@
+guest/target
+guest/wit/deps
+guest/wkg.lock
+guest/src/bindings.rs
+host/dist
+host/node_modules
+host/package-lock.json

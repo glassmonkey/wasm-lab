@@ -1,0 +1,15 @@
+{
+  "name": "node-jco-component-text-record-host",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "@bytecodealliance/preview2-shim": "^0.17.0"
+  },
+  "devDependencies": {
+    "@bytecodealliance/jco": "^1.19.0"
+  }
+}
