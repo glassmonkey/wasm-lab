@@ -1,0 +1,27 @@
+package local:demo;
+
+// テキストベースと構造体的なパターンを 1 ファイルにまとめた WIT。
+// wasmtime-go (develop) の string + list + record marshaling を実機で
+// 検証する目的。
+world demo {
+    // テキスト処理
+    export greet: func(name: string) -> string;
+    export upper: func(s: string) -> string;
+    export words: func(s: string) -> list<string>;
+
+    // 構造体
+    record point {
+        x: f64,
+        y: f64,
+    }
+    record person {
+        name: string,
+        age: u32,
+        tags: list<string>,
+    }
+
+    export translate: func(p: point, dx: f64, dy: f64) -> point;
+    export distance: func(a: point, b: point) -> f64;
+    export format-person: func(p: person) -> string;
+    export make-person: func(name: string, age: u32, tags: list<string>) -> person;
+}
