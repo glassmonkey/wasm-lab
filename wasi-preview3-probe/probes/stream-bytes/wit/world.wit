@@ -1,0 +1,6 @@
+package local:p3-stream-bytes;
+
+// Probe 3: stream<u8> 戻り値を WIT で書く。preview3 の async ストリーム想定。
+world prober {
+    export read-bytes: func(n: u32) -> stream<u8>;
+}

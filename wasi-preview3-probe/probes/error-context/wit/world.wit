@@ -1,0 +1,7 @@
+package local:p3-error-context;
+
+// Probe 2: error-context は preview3 系の機能。result<T, error-context>
+// で関数が失敗時に「文脈付きエラー」を返せる。
+world prober {
+    export try-divide: func(a: s32, b: s32) -> result<s32, error-context>;
+}

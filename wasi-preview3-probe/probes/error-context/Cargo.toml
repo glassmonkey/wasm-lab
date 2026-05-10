@@ -1,0 +1,17 @@
+[package]
+name = "p3-error-context"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wit-bindgen-rt = { version = "0.39", features = ["bitflags", "async"] }
+
+[package.metadata.component]
+package = "local:p3-error-context"
+
+[package.metadata.component.target]
+path = "wit"
+world = "prober"

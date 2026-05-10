@@ -1,0 +1,7 @@
+package local:p3-future-simple;
+
+// Probe 1: 戻り値が future<T> の関数を WIT で書けるか?
+// Rust 側でどう実装することになるか? cargo-component は受け付けるか?
+world prober {
+    export double-async: func(x: u32) -> future<u32>;
+}
