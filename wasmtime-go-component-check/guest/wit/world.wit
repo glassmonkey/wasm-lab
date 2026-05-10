@@ -1,0 +1,18 @@
+package local:calculator;
+
+// WIT-defined component used to verify that the develop branch of
+// wasmtime-go can: (a) load a real .component.wasm built from WIT via
+// cargo-component, (b) introspect its exports via the type hierarchy, and
+// (c) call primitive functions with both signed and unsigned integers,
+// floats, and bools.
+//
+// Only primitive WIT types are used because the develop branch (slice 2:
+// values) currently marshals primitives only.
+world calculator {
+    export add-s32: func(a: s32, b: s32) -> s32;
+    export mul-s64: func(a: s64, b: s64) -> s64;
+    export div-f64: func(a: f64, b: f64) -> f64;
+    export negate-s32: func(x: s32) -> s32;
+    export sum-u32: func(a: u32, b: u32) -> u32;
+    export is-positive: func(x: s32) -> bool;
+}
