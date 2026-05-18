@@ -1,0 +1,9 @@
+package local:handler;
+
+// wasi:http/proxy world を直接 export。
+// この component は wasmtime serve / Spin などにそのまま deploy できる
+// HTTP リクエストハンドラ。テスト時は host (TS) が
+// wasi:http/incoming-handler の handle() を直接 invoke する。
+world handler {
+    include wasi:http/proxy@0.2.0;
+}
